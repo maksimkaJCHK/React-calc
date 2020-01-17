@@ -1,0 +1,58 @@
+#app {
+  padding: 0 10px;
+}
+
+.calc {
+  color: #fff;
+  max-width: 600px;
+  margin: 20px auto;
+  font-weight: bold;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 15px 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+  div {
+    box-sizing: border-box;
+  }
+  .btn {
+    font-weight: bold;
+  }
+  .valutes-list {
+    margin: 0 0 20px;
+  }
+  .form-control {
+    height: auto;
+    padding: 0 10px;
+    text-align: right;
+    font-size: 28px;
+    line-height: 120%;
+    margin-bottom: 15px;
+  }
+  .action {
+    height: 19px;
+    font-size: 12px;
+    line-height: 120%;
+    padding: 5px 0 0;
+  }
+  .curs {
+    text-align: right;
+    font-size: 12px;
+    b {
+      font-size: 14px;
+      padding: 0 5px;
+    }
+  }
+  .cursM {
+    margin: 5px 0 0;
+    .btn {
+      margin: 10px 0 0;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "wbp-boilerplate",
+  "version": "0.0.1",
+  "description": "wbp-boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --open"
+  },
+  "author": "Maksim Zhuchkov",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "autoprefixer": "^9.6.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.9.2",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "sugarss": "^2.0.0",
+    "terser-webpack-plugin": "^2.1.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "superagent": "^5.2.1"
+  }
+}
