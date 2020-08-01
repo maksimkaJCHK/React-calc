@@ -11,8 +11,8 @@ export default function ValuteTranslate(props) {
             let transRunText = 'Перевести из рублей в "'+el.valuteName+'"';
             let transValText = 'Перевести из "'+el.valuteName+'" в рубли';
             return <div className=" btn-valute" key={count}>
-              {<CalcBut classN={classN} evnt={convRub} transfer = {el.curs} text={transRunText} />}
-              {<CalcBut classN={classN} evnt={convValute} transfer = {el.curs} text={transValText} />}
+              {<CalcBut classN = {classN} evnt = { convRub} transfer = {el.curs} text = { transRunText } />}
+              {<CalcBut classN = {classN} evnt = {convValute} transfer = {el.curs} text = { transValText } />}
             </div>
           })
         }

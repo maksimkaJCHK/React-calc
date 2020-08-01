@@ -41,9 +41,11 @@ export default class Calc extends Component {
         Math.floor(value) === value;
     };
   }
+
   componentDidUpdate() {
     this.writeCookie();
   }
+
   componentWillMount() {
     let actionExp = '';
     let actionSign = '';
@@ -61,7 +63,7 @@ export default class Calc extends Component {
     if(getCookie("calcVal")) {
       calcVal = getCookie("calcVal");
     }
-    
+
     this.setState({
       actionExp: actionExp,
       actionSign: actionSign,
@@ -99,6 +101,7 @@ export default class Calc extends Component {
       }
     });
   }
+
   writeCookie() {
     let {actionExp, actionSign, calcValVis, calcVal} = this.state;
     setCookie("actionExp", actionExp, {
@@ -114,36 +117,37 @@ export default class Calc extends Component {
       expires: 1209600
     });
   }
+
   changeSign() {
     let calcValVis = this.state.calcValVis;
     let numb = Number(calcValVis);
-    if(numb<0) {
+    if(numb < 0) {
       calcValVis = Math.abs(numb);
     } else {
-      calcValVis = '-'+calcValVis;
+      calcValVis = '-' + calcValVis;
     }
     this.setState({
       calcValVis: calcValVis,
       calcVal: calcValVis
     });
   }
+
   signAction(e) {
     let action = e.target.value;
     let actionSign = this.state.actionSign;
     if(action == actionSign) {
       this.calculate();
-    } else if (actionSign=='') {
+    } else if (actionSign == '') {
       this.setState({
         actionExp: this.state.calcValVis,
         actionSign: action,
         calcVal: '0'
       });
     } else {
-      this.setState({
-        actionSign: action,
-      });
+      this.calculate();
     }
   }
+
   writeNum(e) {
     let inpVal = e.target.value;
     let calcValVis = this.state.calcVal;
@@ -157,6 +161,7 @@ export default class Calc extends Component {
       calcVal: calcValVis
     });
   }
+
   delNumb() {
     let calcValVis = this.state.calcValVis;
     if(calcValVis.length>1) {
@@ -172,6 +177,7 @@ export default class Calc extends Component {
       calcVal: calcValVis
     });
   }
+
   reset() {
     this.setState({
       calcVal: '0',
@@ -180,6 +186,7 @@ export default class Calc extends Component {
       actionSign: '',
     });
   }
+
   calculate() {
     let {actionExp, actionSign, calcValVis} = this.state;
     let counting;
@@ -192,11 +199,12 @@ export default class Calc extends Component {
 
     this.setState({
       calcVal: '0',
-      calcValVis: counting,
+      calcValVis: isFinite(counting) ? counting : 0,
       actionExp: '',
       actionSign: '',
     });
   }
+
   convRub(x) {
     let curs = x;
     let inpVal = this.state.calcVal;
@@ -211,6 +219,7 @@ export default class Calc extends Component {
       actionSign: '',
     });
   }
+
   convValute(x) {
     let curs = x;
     let inpVal = this.state.calcVal;
@@ -225,6 +234,7 @@ export default class Calc extends Component {
       actionSign: '',
     });
   }
+
   render() {
     let writeNum = this.writeNum;
     let signAction = this.signAction;
