@@ -7,7 +7,7 @@ export default function CalcSign(props) {
     <div className="col-xs-3">
       {
         sign.map((e, i) => {
-          if(e=='=') {
+          if(e == '=') {
               return <CalcBut classN={signBut} val={e} key={i} evnt={calculate} text={e} />
           }
           return <CalcBut classN={signBut} val={e} key={i} evnt={signAction} text={e} />
